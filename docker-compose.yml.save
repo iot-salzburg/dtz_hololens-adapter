@@ -5,13 +5,11 @@ services:
     image: 127.0.0.1:5001/hololens-adapter
     build: ./
     volumes:
-      - ./data/:/data/
-#      - /mnt/glusterfs/dtz/node-red/hololens-adapter/data/:/data/
     ports:
       - 1880:1880
     deploy:
       placement:
-        constraints: [node.hostname == il072]
+        constraints: [node.role == worker]
       resources:
         limits:
           cpus: "1"
