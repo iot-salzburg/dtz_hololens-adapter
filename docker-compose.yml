@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.4'
 
 services:
   adapter:
@@ -9,9 +9,10 @@ services:
 #      - /mnt/glusterfs/dtz/node-red/hololens-adapter/data/:/data/
     ports:
       - 1880:1880
+    network_mode: host
     deploy:
       placement:
-        constraints: [node.hostname == il072]
+        constraints: [node.hostname == il071]
       resources:
         limits:
           cpus: "1"
